@@ -1,0 +1,5 @@
+PyMuPDF
+sentence-transformers
+psycopg2-binary
+llama-cpp-python
+numpy

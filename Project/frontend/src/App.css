@@ -1,0 +1,796 @@
+/* Common styles */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  background-color: #134ac2; /* simple professional blue */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle:hover {
+  background-color: #1d4ed8; /* slightly darker blue on hover */
+  transform: scale(1.05);
+}
+
+/* Light mode */
+.App.light {
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+.App.light .login-container {
+  background: #fff;
+  color: #222;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.App.light input {
+  background: #f0f0f0;
+  color: #000;
+}
+
+.App.light input:focus {
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+/* Dark mode */
+.App.dark {
+  background-color: #0a0a0a;
+  color: #eee;
+}
+
+.App.dark .login-container {
+  background: #121212;
+  color: #eee;
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+}
+
+.App.dark input {
+  background: #1e1e1e;
+  color: #eee;
+}
+
+.App.dark input:focus {
+  background: #2a2a2a;
+  box-shadow: 0 0 10px 3px rgba(102, 126, 234, 0.7);
+}
+
+/* Shared login container and inputs */
+.login-container {
+  padding: 40px 50px;
+  border-radius: 16px;
+  max-width: 420px;
+  width: 100%;
+}
+
+.sidebar-title {
+  color: #f5f5f5 !important;
+}
+
+/* Light mode <h2> */
+.App.light h2 {
+  color: #222; /* dark gray for readability */
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* Dark mode <h2> */
+.App.dark h2 {
+  color: #f5f5f5; /* soft white for contrast */
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* Light mode <h2> */
+.App.light h1 {
+  color: #222; /* dark gray for readability */
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+/* Dark mode <h2> */
+.App.dark h1 {
+  color: #f5f5f5; /* soft white for contrast */
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+}
+
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.2);
+  outline: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 14px 0;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.15rem;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition: background 0.4s ease, transform 0.2s ease;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.7);
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #5a67d8 0%, #6b46c1 100%);
+  transform: scale(1.05);
+}
+
+/* First button (inherits all above) */
+button[type="submit"].first-button {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+}
+
+button[type="submit"].first-button:hover {
+  background: linear-gradient(90deg, #5a67d8 0%, #6b46c1 100%);
+  transform: translateY(-1px);
+}
+
+/* Second button (inherits all above) */
+button[type="submit"].second-button {
+  background: linear-gradient(90deg, #38b2ac 0%, #319795 100%);
+}
+
+button[type="submit"].second-button:hover {
+  background: linear-gradient(90deg, #2c7a7b 0%, #285e61 100%);
+  transform: translateY(-1px);
+}
+
+/* Third button (inherits base button styles) */
+button[type="submit"].green-button {
+  background: linear-gradient(90deg, #48bb78 0%, #38a169 100%);
+}
+
+button[type="submit"].green-button:hover {
+  background: linear-gradient(90deg, #2f855a 0%, #276749 100%);
+  transform: translateY(-1px);
+}
+
+.button-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.bottom-right-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 12px; /* space between the buttons */
+  z-index: 1000;
+}
+
+.error-message {
+  color: #ff3860;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+
+/* DOCTOR PAGE*/
+.home-page form {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.home-page form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-page h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.home-page label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ff5500;
+}
+
+.form-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.predict-button-wrapper {
+  margin-top: 24px;
+  text-align: center;
+}
+
+
+
+/* ADMIN PAGE*/
+.create-user-section, .user-list-section {
+  margin-bottom: 40px;
+}
+
+select {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #1e1e1e;
+  color: #eee;
+  outline: none;
+}
+
+.App.light select {
+  background: #f0f0f0;
+  color: #000;
+}
+
+.user-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.user-list li {
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.07);
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.user-list li:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.message {
+  margin-top: 12px;
+  color: #21f1a1;
+  font-weight: 600;
+  text-align: center;
+}
+/* Prediction Home Section */
+.toggle-section {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 16px;
+}
+
+.patient-preview {
+  margin-top: 15px;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* CT Scan Section */
+.CT-container {
+  padding: 20px;
+  max-height: calc(100vh - 80px); /* leave space for any header */
+  overflow-y: auto;
+  max-width: 1200px; /* wider container */
+  margin: 0 auto; /* center it */
+  width: 110%;     /* full width within its max */
+}
+
+/* Optional: a nice scroll */
+.CT-container::-webkit-scrollbar {
+  width: 8px;
+}
+.CT-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+/* Grid layout for scans */
+.scans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.scan-card {
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.scan-card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* Panel for showcasing number of available images for retraining  */
+.stats-panel {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+}
+
+
+.progress-bar {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 1rem;
+  height: 10px;
+}
+.progress {
+  height: 100%;
+  background-color: green;
+  transition: width 0.3s ease-in-out;
+}
+
+
+.toggle-settings {
+  margin: 1rem 0;
+  background: #ddd;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.evaluation-box {
+  padding: 1rem;
+  margin-top: 1rem;
+  border-left: 5px solid green;
+  border-radius: 6px;
+}
+
+
+/* RAG based ChatBot */
+
+/* Container for entire chat */
+.bot-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 40px); /* account for 20px top/bottom padding in .doctor-content */
+  width: 200%;
+  max-width: 1200px; /* Optional: limit max width */
+  margin: auto;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Scrollable chat area */
+.chat-box {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 12px;
+}
+
+/* Common message bubble styles */
+.chat-message {
+  max-width: 85%;
+  padding: 12px 16px;
+  border-radius: 16px;
+  line-height: 1.5;
+  font-size: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* User messages */
+.user-msg {
+  align-self: flex-end;
+  background-color: #daf5dc;
+  color: #1e1e1e;
+  border-top-right-radius: 0;
+}
+
+/* Bot messages */
+.bot-msg {
+  align-self: flex-start;
+  background-color: #dceeff;  /* Soft light blue */
+  color: #1a1a1a;
+  border-top-left-radius: 0;
+}
+
+/* Input area styles */
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.input-area button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-area button:hover {
+  background-color: #0056b3;
+}
+
+/* RAG configuration for ChatBot */
+.rag-training-page {
+  padding: 20px;
+}
+
+.upload-section input {
+  margin-right: 10px;
+}
+
+.sources-list ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.App.light .sources-list li {
+  background-color: #e2e8f0; /* Light gray-blue */
+  color: #222;
+  border: 1px solid #cbd5e0;
+}
+
+.App.dark .sources-list li {
+  background-color: #1e293b; /* Slate-800 from Tailwind */
+  color: #eee;
+  border: 1px solid #334155;
+}
+
+.sources-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.info-message {
+  margin-top: 10px;
+  color: green;
+}
+
+
+/* Scrollable Styles */
+.table-scroll {
+  max-height: 800px;
+  overflow-y: auto;
+  overflow-x: auto;
+  margin-top: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: 120%; /* takes full width of parent */
+  min-width: 1100px; /* or set a fixed size */
+}
+
+.table-scroll thead th {
+  top: 0;
+  z-index: 2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Report Page Styles */
+
+.report-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 40px); 
+  width: 250%;                    /* ✅ Full width of parent */
+  max-width: 1000px;              /* ✅ Optional: control max width */
+  margin: auto;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow-x: hidden;             /* ✅ Prevent horizontal scroll */
+}
+
+.report-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.report-form select,
+.report-form textarea {
+  width: 100%;                    /* ✅ Fill container */
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: vertical;               /* ✅ Only vertical resizing */
+  box-sizing: border-box;
+}
+
+.report-form button {
+  align-self: flex-start;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.report-form button:hover {
+  background-color: #45a049;
+}
+
+/* Report Admin Styles */
+
+.admin-report-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  color: #fff;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2c3e50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.filter-buttons button:hover {
+  background-color: #3f5870;
+}
+
+.filter-buttons .active {
+  background-color: #4caf50;
+  font-weight: bold;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #1f1f1f;
+  border-radius: 8px;
+}
+
+.report-table th,
+.report-table td {
+  border: 1px solid #444;
+  padding: 12px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.report-table th {
+  background-color: #333;
+  color: white;
+}
+
+.toggle-button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.toggle-button.solve {
+  background-color: #4caf50;
+  color: white;
+}
+
+.toggle-button.solve:hover {
+  background-color: #45a049;
+}
+
+.toggle-button.unsolve {
+  background-color: #f44336;
+  color: white;
+}
+
+.toggle-button.unsolve:hover {
+  background-color: #d32f2f;
+}
+
+.search-fields input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background-color: #2c3e50;
+  color: white;
+  outline: none;
+  flex: 1;
+}
+
+.search-fields input::placeholder {
+  color: #aaa;
+}
+
+
+
+/* Patient/Person Databse Styles */
+.data-database-container {
+  padding: 20px;
+  color: #fff;
+}
+
+.search-input {
+  padding: 10px;
+  width: 300px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1e1e1e;
+  border-radius: 8px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px;
+  border: 1px solid #444;
+  color: #fff;
+}
+
+.data-table th {
+  background: #333;
+  color: white;
+}
+
+.disabled-button {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  max-height: 80%;
+  overflow-y: auto;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .modal-content, .modal-content * {
+    visibility: visible;
+  }
+
+  .modal-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* 🔒 Hide modal action buttons when printing */
+  .modal-actions {
+    display: none;
+  }
+}
