@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+xgboost
+matplotlib
+seaborn
+shap
+ipywidgets
+graphviz
+# torch #Install from website if using GPU
+ipython
+#cupy #Install from website if using GPU
